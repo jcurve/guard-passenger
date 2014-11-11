@@ -3,7 +3,7 @@ require 'guard/guard'
 require 'rubygems'
 
 module Guard
-  class Passenger < Guard
+  class Passenger < Plugin
 
     autoload :Runner, 'guard/passenger/runner'
     autoload :Pinger, 'guard/passenger/pinger'
@@ -22,7 +22,7 @@ module Guard
     # = Guard methods =
     # =================
 
-    def initialize(watchers = [], options = {})
+    def initialize(options = {})
       super
 
       @standalone   = options[:standalone].nil? ? true : options[:standalone]
